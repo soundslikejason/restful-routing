@@ -3,13 +3,13 @@ mongoose        = require("mongoose"),
 express         = require("express"),
 app             = express();
 
-//APP CONFIG
+// APP CONFIG
 mongoose.connect("mongodb://localhost/restful_blog_app");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
-//MONGOOSE/MODEL CONFIG
+// MONGOOSE/MODEL CONFIG
 var blogSchema = new mongoose.Schema({
     title: String,
     image: String,
@@ -24,12 +24,13 @@ var Blog = mongoose.model("Blog", blogSchema);
 //     body: "Hello, this is a blog post!"
 // });
 
-//RESTFUL ROUTES
+// RESTFUL ROUTES
 
 app.get("/", function(req, res) {
     res.redirect("/blogs");
 });
 
+// INDEX ROUTE
 app.get("/blogs", function(req, res) {
     Blog.find({}, function(err, blogs) {
         if (err) {
@@ -38,6 +39,25 @@ app.get("/blogs", function(req, res) {
             res.render("index", {blogs: blogs});
         }
     });
+});
+
+// NEW ROUTE
+app.get("/blogs/new", function(req, res) {
+    res.render("new");
+});
+
+// CREATE ROUTE
+app.post("/blogs", function(req, res) {
+    // create blog
+    Blog.create(req.body.blog, function(err, newBlog) {
+        if (err) {
+            res.render("new");
+        } else {
+            // then, redirect to the index            
+            res.redirect("/blogs");
+        }
+    });
+
 });
 
 app.listen(process.env.PORT, process.env.IP, function() {
