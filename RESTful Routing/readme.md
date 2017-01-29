@@ -33,3 +33,7 @@
 * Add Update Route
 * Add Update Form
 * Add Method-Override
+
+#DESTROY
+* Add Destroy Route
+* Add Edit and Destroy Links
