@@ -9,7 +9,6 @@
 * Setup the Blog App
 * Create the Blog model
 * Add INDEX route and template
-* Add Simple Nav Bar
 
 #Basic Layout
 * Add Header amd Footer Partials
@@ -27,3 +26,10 @@
 * Add Show template
 * Add links to show page
 * Style show template
+
+#Edit/Update
+* Add Edit Route
+* Add Edit Form
+* Add Update Route
+* Add Update Form
+* Add Method-Override
