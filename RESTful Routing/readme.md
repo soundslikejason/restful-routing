@@ -10,30 +10,35 @@
 * Create the Blog model
 * Add INDEX route and template
 
-#Basic Layout
+##Basic Layout
 * Add Header amd Footer Partials
 * Include Semantic UI
 * Add Simple Nav
 
-#Putting the C in CRUD
+##Putting the C in CRUD
 * Add NEW route
 * Add NEW template
 * Add CREATE route
 * Add CREATE template
 
-#SHOWtime
+##SHOWtime
 * Add Show route
 * Add Show template
 * Add links to show page
 * Style show template
 
-#Edit/Update
+##Edit/Update
 * Add Edit Route
 * Add Edit Form
 * Add Update Route
 * Add Update Form
 * Add Method-Override
 
-#DESTROY
+##DESTROY
 * Add Destroy Route
 * Add Edit and Destroy Links
+
+##Final Updates
+* Sanitize blog body
+* Style Index
+* Update REST Table
